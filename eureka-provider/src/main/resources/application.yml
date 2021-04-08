@@ -7,7 +7,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8080/eureka
+      defaultZone: http://admin:654321@127.0.0.1:8080/eureka
   instance:
     # ²ÉÓÃIP×¢²á
     prefer-ip-address: true
