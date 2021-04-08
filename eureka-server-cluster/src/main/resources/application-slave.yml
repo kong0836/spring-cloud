@@ -1,0 +1,8 @@
+server:
+  port: 9999
+  # 指向你的从节点的Eureka
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:654321@127.0.0.1:8888/eureka/
