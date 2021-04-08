@@ -7,4 +7,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:654321@127.0.0.1:8080/eureka
+    # 单机
+     defaultZone: http://admin:654321@127.0.0.1:8080/eureka
+    # 集群
+#     defaultZone: http://admin:654321@127.0.0.1:8888/eureka,http://admin:654321@127.0.0.1:9999/eureka
