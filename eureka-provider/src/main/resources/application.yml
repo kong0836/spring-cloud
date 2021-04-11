@@ -18,7 +18,7 @@ eureka:
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
     # 自定义实例跳转链接
     # status-page-url:
-    # Eureka Client 发送心跳给 server 端的频率，默认30s
-    lease-renewal-interval-in-seconds: 5
-    # Eureka Server 至上一次收到 client 的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则移除该 Instance，默认90s
-    lease-expiration-duration-in-seconds: 5
+    # Eureka服务续约频率，默认30s
+    lease-renewal-interval-in-seconds: 30
+    # Eureka服务失效时间，默认90s
+    lease-expiration-duration-in-seconds: 90
