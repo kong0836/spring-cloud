@@ -19,6 +19,7 @@
         <module>eureka-provider</module>
         <module>eureka-consumer</module>
         <module>eureka-server-cluster</module>
+        <module>eureka-ribbon</module>
     </modules>
 
     <properties>
