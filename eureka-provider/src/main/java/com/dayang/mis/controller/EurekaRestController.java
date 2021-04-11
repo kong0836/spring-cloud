@@ -1,5 +1,6 @@
 package com.dayang.mis.controller;
 
+import com.google.gson.Gson;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,6 @@ public class EurekaRestController {
         List<ServiceInstance> serviceInstanceList = discoveryClient.getInstances("eureka-provider");
         InstanceInfo instanceInfo1 = ((EurekaDiscoveryClient.EurekaServiceInstance) serviceInstanceList.get(0)).getInstanceInfo();
 
-        return instanceInfo;
+        return new Gson().toJson(instanceInfo1);
     }
 }
