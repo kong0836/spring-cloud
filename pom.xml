@@ -20,6 +20,7 @@
         <module>eureka-consumer</module>
         <module>eureka-server-cluster</module>
         <module>eureka-ribbon</module>
+        <module>common</module>
     </modules>
 
     <properties>

@@ -1,8 +1,11 @@
 package com.dayang.mis.controller;
 
+import entity.HouseInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -21,6 +24,16 @@ public class ConsumerRestController {
     @GetMapping("/hello")
     public String hello() {
 //        return restTemplate.getForObject("http://127.0.0.1:8081/demo/hello", String.class);
-        return restTemplate.getForObject("http://eureka-provider/demo/hello", String.class);
+        return restTemplate.getForObject("http://eureka-provider/provider/hello", String.class);
+    }
+
+    @GetMapping("/call/data")
+    public HouseInfo getData(@RequestParam("name") String name) {
+        return restTemplate.getForObject("http://eureka-provider/provider/house/data?name=" + name, HouseInfo.class);
+    }
+
+    @GetMapping("/call/data/{name}")
+    public String getData2(@PathVariable("name") String name) {
+        return restTemplate.getForObject("http://eureka-provider/provider/house/data/{name}", String.class, name);
     }
 }
