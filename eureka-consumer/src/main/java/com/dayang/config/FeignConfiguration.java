@@ -1,5 +1,6 @@
 package com.dayang.config;
 
+import com.dayang.interceptor.FeignBasicAuthRequestInterceptor;
 import feign.Logger;
 import feign.auth.BasicAuthRequestInterceptor;
 import org.springframework.context.annotation.Bean;
@@ -32,4 +33,12 @@ public class FeignConfiguration {
     public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
         return new BasicAuthRequestInterceptor("user", "password");
     }
+
+    /**
+     * 配置自定义认证拦截器
+     */
+    // @Bean
+    // public FeignBasicAuthRequestInterceptor basicAuthRequestInterceptor2() {
+    //     return new FeignBasicAuthRequestInterceptor();
+    // }
 }
