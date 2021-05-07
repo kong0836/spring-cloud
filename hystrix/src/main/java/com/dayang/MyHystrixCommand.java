@@ -20,9 +20,24 @@ public class MyHystrixCommand extends HystrixCommand<String> {
         this.name = name;
     }
 
+    // @Override
+    // protected String run() {
+    //     return this.name + ":" + Thread.currentThread().getName();
+    // }
+
+
     @Override
     protected String run() {
+        try {
+            Thread.sleep(1000 * 10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return this.name + ":" + Thread.currentThread().getName();
+    }
+    @Override
+    protected String getFallback() {
+        return "失败了 ";
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
