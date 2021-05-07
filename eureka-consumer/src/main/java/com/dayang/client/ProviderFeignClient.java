@@ -1,5 +1,6 @@
 package com.dayang.client;
 
+import com.dayang.config.FeignConfiguration;
 import entity.HouseInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @description
  * @date 2021/5/6 17:20
  */
-@FeignClient(value = "eureka-provider")
+@FeignClient(value = "eureka-provider",configuration = FeignConfiguration.class)
 public interface ProviderFeignClient {
 
     @GetMapping("/provider/metadata")
