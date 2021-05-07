@@ -1,4 +1,4 @@
-package com.dayang.mis.config;
+package com.dayang.config;
 
 import com.netflix.appinfo.InstanceInfo;
 import org.slf4j.Logger;

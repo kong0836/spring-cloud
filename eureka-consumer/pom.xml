@@ -35,7 +35,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <executable>true</executable>
-                    <mainClass>com.dayang.mis.EurekaConsumerApplication</mainClass>
+                    <mainClass>com.dayang.EurekaConsumerApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

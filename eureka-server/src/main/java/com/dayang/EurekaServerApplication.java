@@ -1,4 +1,4 @@
-package com.dayang.mis;
+package com.dayang;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.dayang.mis.config;
+package com.dayang.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

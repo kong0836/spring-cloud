@@ -1,4 +1,4 @@
-package com.dayang.mis.controller;
+package com.dayang.controller;
 
 import com.google.gson.Gson;
 import com.netflix.appinfo.InstanceInfo;

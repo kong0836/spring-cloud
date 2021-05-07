@@ -1,5 +1,6 @@
-package com.dayang.mis.controller;
+package com.dayang.controller;
 
+import com.dayang.client.ProviderFeignClient;
 import entity.HouseInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -26,6 +27,9 @@ public class ConsumerRestController {
     @Autowired
     private LoadBalancerClient loadBalancer;
 
+    @Autowired
+    private ProviderFeignClient providerFeignClient;
+
     @GetMapping("/hello")
     public String hello() {
 //        return restTemplate.getForObject("http://127.0.0.1:8081/demo/hello", String.class);
@@ -34,12 +38,14 @@ public class ConsumerRestController {
 
     @GetMapping("/call/data")
     public HouseInfo getData(@RequestParam("name") String name) {
-        return restTemplate.getForObject("http://eureka-provider/provider/house/data?name=" + name, HouseInfo.class);
+        return providerFeignClient.getData(name);
+        // return restTemplate.getForObject("http://eureka-provider/provider/house/data?name=" + name, HouseInfo.class);
     }
 
     @GetMapping("/call/data/{name}")
     public String getData2(@PathVariable("name") String name) {
-        return restTemplate.getForObject("http://eureka-provider/provider/house/data/{name}", String.class, name);
+        return providerFeignClient.getData2(name);
+        // return restTemplate.getForObject("http://eureka-provider/provider/house/data/{name}", String.class, name);
     }
 
     @GetMapping("/choose")

@@ -1,4 +1,4 @@
-package com.dayang.mis.config;
+package com.dayang.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
