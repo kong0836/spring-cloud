@@ -21,6 +21,7 @@
         <module>eureka-server-cluster</module>
         <module>eureka-ribbon</module>
         <module>common</module>
+        <module>hystrix</module>
     </modules>
 
     <properties>
